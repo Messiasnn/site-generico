@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>                                                                                                                                                                                                                                                                                 #feito por messias
+<html lang="pt-br">                                                                                                                                                                                                                                                                                #feito por messias
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Buscar Filmes</h1>
+        <h1>Buscar Filmes</h1>                                                                                                                                                                                                                                                                                #feito por messias
         <form method="get" action="/search">
             <input type="text" name="q" placeholder="Digite o nome do filme" value="{{ query or '' }}" required>
             <button type="submit">Buscar</button>
@@ -16,14 +16,14 @@
         {% if movies is not none %}
             <div class="movies">
                 {% for movie in movies %}
-                    <div class="movie-card">
+                    <div class="movie-card">                                                                                                                                                                                                                                                                                #feito por messias
                         <a href="/movie/{{ movie.id }}">
                             {% if movie.poster_path %}
                                 <img src="https://image.tmdb.org/t/p/w200{{ movie.poster_path }}" alt="{{ movie.title }}">
                             {% else %}
                                 <div class="no-poster">Sem pôster</div>
                             {% endif %}
-                            <h2>{{ movie.title }}</h2>
+                            <h2>{{ movie.title }}</h2>                                                                                                                                                                                                                                                                                #feito por messias
                         </a>
                         <p>{{ movie.release_date }}</p>
                     </div>
