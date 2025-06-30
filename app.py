@@ -1,9 +1,9 @@
 import os
-import requests
+import requests                                                                                                                                                                                                                                                                                     #feito por messias
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-
-load_dotenv()
+                                                                                                                                                                                                                                                                                                                       #feito por messias
+load_dotenv()                                                                                                                                                                                                                                                                                                                             #feito por messias                                                                                                                                                                                                                                                                                                                  #feito por messias
 
 app = Flask(__name__)
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
