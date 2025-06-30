@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/">&larr; Voltar</a>
+        <div class="movie-detail">
+            {% if movie.poster_path %}
+                <img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" alt="{{ movie.title }}">
+            {% endif %}
+            <div>
+                <h1>{{ movie.title }}</h1>
+                <p><strong>Lançamento:</strong> {{ movie.release_date }}</p>
+                <p><strong>Nota:</strong> {{ movie.vote_average }}</p>
+                <p><strong>Sinopse:</strong> {{ movie.overview }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

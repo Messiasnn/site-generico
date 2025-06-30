@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Filmes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar Filmes</h1>
+        <form method="get" action="/search">
+            <input type="text" name="q" placeholder="Digite o nome do filme" value="{{ query or '' }}" required>
+            <button type="submit">Buscar</button>
+        </form>
+        {% if movies is not none %}
+            <div class="movies">
+                {% for movie in movies %}
+                    <div class="movie-card">
+                        <a href="/movie/{{ movie.id }}">
+                            {% if movie.poster_path %}
+                                <img src="https://image.tmdb.org/t/p/w200{{ movie.poster_path }}" alt="{{ movie.title }}">
+                            {% else %}
+                                <div class="no-poster">Sem pôster</div>
+                            {% endif %}
+                            <h2>{{ movie.title }}</h2>
+                        </a>
+                        <p>{{ movie.release_date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
